@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 50vh;
+            width: 50vw;
+            border: 5px solid rgb(102, 48, 48);
+            border-radius: 5px;
+            background-color: black;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            
+        }
+        #main{
+            height: 50%;
+            width: 50%;
+            border: 5px solid black;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            font-size: 50px;
+            font-weight: 800;
+            font-family: arial;
+            text-shadow: 4px 4px 4px white;
+             
+        
+
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="main"><span id="main"></span></div>
+</body>
+<script>
+    setInterval(() => {
+        var date = new  Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        var session = "AM"
+        if(h>12){
+            var session = "PM";
+            var h = h-12;
+        }
+        document.getElementById('main').innerHTML = h + ":" + m + ":" +s + "_" +session;
+
+    }, 1000);
+</script>
+</html>
